@@ -24,7 +24,7 @@
             targetPackage     指定生成的model生成所在的包名
             targetProject     指定在该项目下所在的路径
         -->
-        <javaModelGenerator targetPackage="com.zga.dazhong.wxs.modules.weixin.entity" targetProject="src\main\java">
+        <javaModelGenerator targetPackage="com.zga.dazhong.wxs.modules.entity" targetProject="src\main\java">
             <!-- 是否对model添加 构造函数 -->
             <property name="constructorBased" value="false"/>
 
@@ -39,7 +39,7 @@
         </javaModelGenerator>
 
         <!--Mapper映射文件生成所在的目录 为每一个数据库的表生成对应的SqlMap文件 -->
-        <sqlMapGenerator targetPackage="mybatis.mappings.weixin" targetProject="src/main/resources">
+        <sqlMapGenerator targetPackage="mybatis.mapper" targetProject="src/main/resources">
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
 
@@ -49,7 +49,7 @@
                 type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口
         -->
 
-        <javaClientGenerator targetPackage="com.zga.dazhong.wxs.modules.weixin.dao"
+        <javaClientGenerator targetPackage="com.zga.dazhong.wxs.mapper"
                              targetProject="src/main/java"
                              type="XMLMAPPER">
         </javaClientGenerator>

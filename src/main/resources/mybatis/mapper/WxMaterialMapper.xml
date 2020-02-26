@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zga.dazhong.wxs.mapper.WxMaterialMapper" >
+  <resultMap id="BaseResultMap" type="com.zga.dazhong.wxs.modules.entity.WxMaterial" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="material_type" property="materialType" jdbcType="INTEGER" />
+    <result column="material_wx_id" property="materialWxId" jdbcType="VARCHAR" />
+    <result column="material_wx_url" property="materialWxUrl" jdbcType="VARCHAR" />
+    <result column="material_local_url" property="materialLocalUrl" jdbcType="VARCHAR" />
+    <result column="material_description" property="materialDescription" jdbcType="VARCHAR" />
+    <result column="material_vid" property="materialVid" jdbcType="VARCHAR" />
+    <result column="material_cover_url" property="materialCoverUrl" jdbcType="VARCHAR" />
+    <result column="created_by" property="createdBy" jdbcType="VARCHAR" />
+    <result column="date_created" property="dateCreated" jdbcType="TIMESTAMP" />
+    <result column="updated_by" property="updatedBy" jdbcType="VARCHAR" />
+    <result column="date_updated" property="dateUpdated" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, material_type, material_wx_id, material_wx_url, material_local_url, material_description, 
+    material_vid, material_cover_url, created_by, date_created, updated_by, date_updated
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from wx_material
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from wx_material
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.zga.dazhong.wxs.modules.entity.WxMaterial" >
+    insert into wx_material (id, material_type, material_wx_id, 
+      material_wx_url, material_local_url, material_description, 
+      material_vid, material_cover_url, created_by, 
+      date_created, updated_by, date_updated
+      )
+    values (#{id,jdbcType=BIGINT}, #{materialType,jdbcType=INTEGER}, #{materialWxId,jdbcType=VARCHAR}, 
+      #{materialWxUrl,jdbcType=VARCHAR}, #{materialLocalUrl,jdbcType=VARCHAR}, #{materialDescription,jdbcType=VARCHAR}, 
+      #{materialVid,jdbcType=VARCHAR}, #{materialCoverUrl,jdbcType=VARCHAR}, #{createdBy,jdbcType=VARCHAR}, 
+      #{dateCreated,jdbcType=TIMESTAMP}, #{updatedBy,jdbcType=VARCHAR}, #{dateUpdated,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zga.dazhong.wxs.modules.entity.WxMaterial" >
+    insert into wx_material
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="materialType != null" >
+        material_type,
+      </if>
+      <if test="materialWxId != null" >
+        material_wx_id,
+      </if>
+      <if test="materialWxUrl != null" >
+        material_wx_url,
+      </if>
+      <if test="materialLocalUrl != null" >
+        material_local_url,
+      </if>
+      <if test="materialDescription != null" >
+        material_description,
+      </if>
+      <if test="materialVid != null" >
+        material_vid,
+      </if>
+      <if test="materialCoverUrl != null" >
+        material_cover_url,
+      </if>
+      <if test="createdBy != null" >
+        created_by,
+      </if>
+      <if test="dateCreated != null" >
+        date_created,
+      </if>
+      <if test="updatedBy != null" >
+        updated_by,
+      </if>
+      <if test="dateUpdated != null" >
+        date_updated,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="materialType != null" >
+        #{materialType,jdbcType=INTEGER},
+      </if>
+      <if test="materialWxId != null" >
+        #{materialWxId,jdbcType=VARCHAR},
+      </if>
+      <if test="materialWxUrl != null" >
+        #{materialWxUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="materialLocalUrl != null" >
+        #{materialLocalUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="materialDescription != null" >
+        #{materialDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="materialVid != null" >
+        #{materialVid,jdbcType=VARCHAR},
+      </if>
+      <if test="materialCoverUrl != null" >
+        #{materialCoverUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="createdBy != null" >
+        #{createdBy,jdbcType=VARCHAR},
+      </if>
+      <if test="dateCreated != null" >
+        #{dateCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedBy != null" >
+        #{updatedBy,jdbcType=VARCHAR},
+      </if>
+      <if test="dateUpdated != null" >
+        #{dateUpdated,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zga.dazhong.wxs.modules.entity.WxMaterial" >
+    update wx_material
+    <set >
+      <if test="materialType != null" >
+        material_type = #{materialType,jdbcType=INTEGER},
+      </if>
+      <if test="materialWxId != null" >
+        material_wx_id = #{materialWxId,jdbcType=VARCHAR},
+      </if>
+      <if test="materialWxUrl != null" >
+        material_wx_url = #{materialWxUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="materialLocalUrl != null" >
+        material_local_url = #{materialLocalUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="materialDescription != null" >
+        material_description = #{materialDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="materialVid != null" >
+        material_vid = #{materialVid,jdbcType=VARCHAR},
+      </if>
+      <if test="materialCoverUrl != null" >
+        material_cover_url = #{materialCoverUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="createdBy != null" >
+        created_by = #{createdBy,jdbcType=VARCHAR},
+      </if>
+      <if test="dateCreated != null" >
+        date_created = #{dateCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedBy != null" >
+        updated_by = #{updatedBy,jdbcType=VARCHAR},
+      </if>
+      <if test="dateUpdated != null" >
+        date_updated = #{dateUpdated,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zga.dazhong.wxs.modules.entity.WxMaterial" >
+    update wx_material
+    set material_type = #{materialType,jdbcType=INTEGER},
+      material_wx_id = #{materialWxId,jdbcType=VARCHAR},
+      material_wx_url = #{materialWxUrl,jdbcType=VARCHAR},
+      material_local_url = #{materialLocalUrl,jdbcType=VARCHAR},
+      material_description = #{materialDescription,jdbcType=VARCHAR},
+      material_vid = #{materialVid,jdbcType=VARCHAR},
+      material_cover_url = #{materialCoverUrl,jdbcType=VARCHAR},
+      created_by = #{createdBy,jdbcType=VARCHAR},
+      date_created = #{dateCreated,jdbcType=TIMESTAMP},
+      updated_by = #{updatedBy,jdbcType=VARCHAR},
+      date_updated = #{dateUpdated,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
