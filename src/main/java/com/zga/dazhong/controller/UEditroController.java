@@ -1,7 +1,7 @@
 package com.zga.dazhong.controller;
+
 import com.baidu.ueditor.ActionEnter;
 import lombok.extern.log4j.Log4j2;
-import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -9,9 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
-import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.UUID;
 
 
 @RestController
@@ -30,7 +28,7 @@ public class UEditroController {
             writer.write(exec);
             writer.flush();
             writer.close();
-        } catch (IOException | JSONException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -149,7 +147,7 @@ public class UEditroController {
                 e.printStackTrace();
             }
 
-            return "/ueditor/jsp/upload/image/"+fileName;
+            return "/dazhong/ueditor/jsp/upload/image/"+fileName;
         } catch (Exception e) {
             log.error("上传文件错误：", e);
             return null;

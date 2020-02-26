@@ -10,8 +10,8 @@
     <script id="container" type="text/plain">这里写你的初始化内容</script>
 </div>
 
-<script src="/ueditor/ueditor.config.js" type="text/javascript"></script>
-<script src="/ueditor/ueditor.all.js" type="text/javascript"></script>
+<script src="/dazhong/ueditor/ueditor.config.js" type="text/javascript"></script>
+<script src="/dazhong/ueditor/ueditor.all.js" type="text/javascript"></script>
 <script type="text/javascript">
     var ueditor = UE.getEditor('container', {
         initialFrameWidth : 1190,       // 设置初始时的宽度
@@ -21,7 +21,7 @@
     UE.Editor.prototype.getActionUrl = function(action) {
         // 如果触发了下面三个动作中，则进行文件上传操作
         if (action == 'uploadimage' || action == 'uploadscrawl' || action == 'uploadvideo') {
-            return '/api/ueditor/upload';
+            return '/dazhong/api/ueditor/upload';
         } else {
             return this._bkGetActionUrl.call(this, action);
         }
