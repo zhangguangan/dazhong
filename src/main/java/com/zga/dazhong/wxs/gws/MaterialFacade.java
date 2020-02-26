@@ -1,15 +1,11 @@
-package com.zga.dazhong.wxs.wxs;
+package com.zga.dazhong.wxs.gws;
 
 import com.zga.dazhong.common.http.HttpClientTemplate;
 import com.zga.dazhong.wxs.api.model.wxresult.MeterialResponseModel;
 import lombok.extern.log4j.Log4j2;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.HttpClients;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.io.IOException;
 import java.io.InputStream;
 
 @Service
@@ -21,7 +17,7 @@ public class MaterialFacade {
     private HttpClientTemplate httpClientTemplate;
 
     public String uploadMeterial(InputStream inputStream, String fileName) {
-        String url = WxUrlConstant.UPLOAD_METERIAL_URL + "access_token="+accessTokenFacade.getAccessToken()+"&type=image";
+        String url = WxUrlConstant.UPLOAD_MATERIAL_URL + "access_token="+accessTokenFacade.getAccessToken()+"&type=image";
         MeterialResponseModel responseModel = httpClientTemplate.postFile(inputStream, url, fileName, MeterialResponseModel.class);
         return responseModel.getMediaId();
     }

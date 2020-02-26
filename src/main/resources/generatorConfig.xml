@@ -12,7 +12,7 @@
         </commentGenerator>
         <!--数据库链接URL，用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://118.25.0.69:3306/legendsneverdie?useUnicode=true&amp;characterEncoding=utf-8" userId="root" password="123456">
+                        connectionURL="jdbc:mysql://118.25.0.69:3306/lengendsneverdie?useSSL=false" userId="root" password="123456">
         </jdbcConnection>
         <javaTypeResolver>
             <!-- This property is used to specify whether MyBatis Generator should
@@ -56,7 +56,7 @@
 
 
 
-        <table tableName="wx_authorize_txt" schema="" domainObjectName="AuthorizeTxtEntity"
+        <table tableName="wx_material" schema="" domainObjectName="WxMaterial"
                enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false" />
 

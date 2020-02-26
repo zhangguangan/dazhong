@@ -1,4 +1,4 @@
-package com.zga.dazhong.wxs.wxs;
+package com.zga.dazhong.wxs.gws;
 
 import com.zga.dazhong.common.http.HttpClientTemplate;
 import com.zga.dazhong.common.redis.RedisCache;

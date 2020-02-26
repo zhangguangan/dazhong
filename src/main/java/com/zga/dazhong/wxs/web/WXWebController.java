@@ -1,22 +1,16 @@
 package com.zga.dazhong.wxs.web;
 
-import com.alibaba.fastjson.JSONObject;
-import com.zga.dazhong.wxs.wxs.AccessTokenFacade;
-import com.zga.dazhong.wxs.wxs.MaterialFacade;
+import com.zga.dazhong.wxs.gws.AccessTokenFacade;
+import com.zga.dazhong.wxs.gws.MaterialFacade;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.lang.reflect.Member;
 
 @RestController
 @Log4j2
