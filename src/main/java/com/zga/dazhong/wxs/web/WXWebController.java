@@ -1,7 +1,7 @@
 package com.zga.dazhong.wxs.web;
 
 import com.zga.dazhong.wxs.gws.AccessTokenFacade;
-import com.zga.dazhong.wxs.gws.MaterialFacade;
+import com.zga.dazhong.wxs.gws.GwsMaterialFacade;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,7 +18,7 @@ public class WXWebController {
     @Resource
     private AccessTokenFacade accessTokenFacade;
     @Resource
-    private MaterialFacade materialFacade;
+    private GwsMaterialFacade gwsMaterialFacade;
 
     @RequestMapping("accesstoken")
     public String getAccesstoken() {
@@ -28,7 +28,7 @@ public class WXWebController {
     @RequestMapping("/uploadImageToWechat")
     public String uploadImageToWechat(HttpServletRequest request, @RequestParam(value = "picFile", required = false) MultipartFile picFile) {
         try {
-//            String result = materialFacade.uploadMeterial(picFile.getInputStream(), picFile.getOriginalFilename());
+//            String result = materialFacade.uploadMaterial(picFile.getInputStream(), picFile.getOriginalFilename());
             String result = getTxtContent(picFile);
             return result;
         } catch (Exception e) {
@@ -40,7 +40,7 @@ public class WXWebController {
     @RequestMapping("/getMeterial")
     public String getMeterial() {
         String mid = "Qw2zlC4QNBc85bIQYY9ZMISCK5jg-LgV_oIZYr1P3nSiWKHcuZFA_vYVRn7uOvuT";
-        String result = materialFacade.getMeterial(mid);
+        String result = gwsMaterialFacade.getMaterial(mid);
         return result;
     }
 
