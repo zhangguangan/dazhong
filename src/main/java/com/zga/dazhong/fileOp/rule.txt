@@ -1,0 +1,53 @@
+{
+	"tableName": "m_coupon_daily_info",
+	"rule": {
+		"0": {
+			"fieldName": "activity_name",
+			"fieldDataType": 0
+		},
+		"1": {
+			"fieldName": "coupon_name",
+			"fieldDataType": 0
+		},
+		"2": {
+			"fieldName": "coupon_type",
+			"fieldDataType": 1
+		},
+		"3": {
+			"fieldName": "stat_date",
+			"fieldDataType": 2
+		},
+		"4": {
+			"fieldName": "activity_code",
+			"fieldDataType": 0
+		},
+		"5": {
+			"fieldName": "coupon_code",
+			"fieldDataType": 0
+		},
+		"6": {
+			"fieldName": "receive_num",
+			"fieldDataType": 3
+		},
+		"7": {
+			"fieldName": "use_num",
+			"fieldDataType": 3
+		},
+		"8": {
+			"fieldName": "estimate_amount",
+			"fieldDataType": 3
+		},
+		"9": {
+			"fieldName": "actual_num",
+			"fieldDataType": 3
+		},
+		"10": {
+			"fieldName": "actual_amount",
+			"fieldDataType": 3
+		},
+		"11": {
+			"fieldName": "unused_amount",
+			"fieldDataType": 3
+		}
+	}
+}

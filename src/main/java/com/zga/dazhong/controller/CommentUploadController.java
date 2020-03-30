@@ -23,7 +23,7 @@ import java.util.List;
 @Log4j2
 public class CommentUploadController {
 
-    private final static String ARE_AADRESS = "";
+    private final static String ARE_AADRESS = "http://mktmain-web-test.360jie.com.cn";
     private final static String COMMENT_URL = ARE_AADRESS + "/comment/addComment?commentContent=CONTENT_TEMPLATE&commentTopic=TECHNOLOGY_EPIDEMIC";
     private final static String CONTENT_TEMPLATE = "CONTENT_TEMPLATE";
 
