@@ -11,7 +11,7 @@
 		},
 		"2": {
 			"fieldName": "coupon_type",
-			"fieldDataType": 1
+			"fieldDataType": 15.85
 		},
 		"3": {
 			"fieldName": "stat_date",
