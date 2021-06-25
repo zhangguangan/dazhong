@@ -8,7 +8,7 @@ import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
 @PropertySource({"classpath:application.properties", "classpath:spring-redis.properties"})
-@MapperScan("com.zga.dazhong.wxs.mapper")
+@MapperScan({"com.zga.dazhong.wxs.mapper", "com.zga.dazhong.shardingSphere.mapper"})
 //@EnableApolloConfig
 public class DazhongApplication {
 
